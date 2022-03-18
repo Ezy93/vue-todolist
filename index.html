@@ -28,15 +28,15 @@
             <div class="row p-5">
                 <!-- qui andranno gli input -->
                 <div class="col-12 text-center p-5 input-group">
-                    <input type="text" name="" id="" class="form-control me-3 rounded">
-                    <button class="btn btn-primary rounded">Add ToDo</button>
+                    <input type="text" name="" id="" class="form-control me-3 rounded" v-model="newToDo">
+                    <button class="btn btn-primary rounded" @click="addToDo(newToDo)">Add ToDo</button>
                 </div>
 
                 <!-- qui andra la lista dei toDo -->
                 <div class="col-12 px-5 ">
                     <ul class="rounded px-0 text-center">
-                        <li class="d-flex justify-content-between px-5 py-3">todo placeholder!!! <i class="fa-solid fa-trash-can"></i> </li>
-                        <li class="text-uppercase fs-5">al momento non sono stati inseriti ToDo</li>
+                        <li class="d-flex justify-content-between px-5 py-3" v-if="ToDoList.length !== 0" v-for="element in ToDoList"> {{element.text}} <i class="fa-solid fa-trash-can" v-if="ToDoList.length > 0"></i> </li>
+                        <li class="text-uppercase fs-5" v-else>al momento non sono stati inseriti ToDo</li>
                     </ul>
                 </div>
             </div>

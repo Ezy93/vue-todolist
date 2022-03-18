@@ -21,9 +21,22 @@ Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul p
 const app = new Vue({
     el: "#app",
     data:{
+        newToDo:"",
         
+        ToDoList: [
+            
+        ],
     },
     methods:{
+
+        addToDo(toDoContent){
+            if(toDoContent.trim()!== ""){
+                this.ToDoList.push({
+                    text: toDoContent,
+                    done: false
+                })
+            }
+        },
 
     },
 });
