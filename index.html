@@ -35,7 +35,7 @@
                 <!-- qui andra la lista dei toDo -->
                 <div class="col-12 px-5 text-center">
                     <ul class="rounded px-0 text-center" v-if="toDoList.length >= 1">
-                        <li class="d-flex justify-content-between px-5 py-3"  v-for="(element ,index) in toDoList" > {{element.text}} <i class="fa-solid fa-trash-can" @click="toDoRemove(index)"></i> </li>
+                        <li class="d-flex justify-content-between px-5 py-3"  v-for="(element ,index) in toDoList" :class="{'text-decoration-line-through': element.done}" > {{element.text}} <i class="fa-solid fa-trash-can" @click="toDoRemove(index)"></i> </li>
                     </ul>
                     <h4 class="text-uppercase bg-secondary text-white rounded" v-else >al momento non sono stati inseriti ToDo</h4>
                 </div>
