@@ -33,15 +33,20 @@ const app = new Vue({
             if(toDoContent.trim()!= ""){
                 this.toDoList.push({
                     text: toDoContent,
-                    done: true
+                    done: false
                 },)
                 
             }
+            
             
         },
 
         toDoRemove(index){
             this.toDoList.splice(index,1);
+        },
+
+        toDoPerformed(index){
+            
         },
 
     },
