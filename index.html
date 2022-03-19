@@ -29,13 +29,13 @@
                 <!-- qui andranno gli input -->
                 <div class="col-12 text-center p-5 input-group">
                     <input type="text" name="" id="" class="form-control me-3 rounded" v-model="newToDo">
-                    <button class="btn btn-primary rounded" @click="addToDo(newToDo)" @keyup.enter="addToDo(newToDo)">Add ToDo</button>
+                    <button class="btn btn-primary rounded"  @click="addToDo(newToDo)" >Add ToDo</button>
                 </div>
 
                 <!-- qui andra la lista dei toDo -->
                 <div class="col-12 px-5 ">
                     <ul class="rounded px-0 text-center">
-                        <li class="d-flex justify-content-between px-5 py-3"  v-for="(element) in toDoList" v-if="toDoList.length > 0"> {{element.text}} <i class="fa-solid fa-trash-can" ></i> </li>
+                        <li class="d-flex justify-content-between px-5 py-3"  v-for="(element ,index) in toDoList" v-if="toDoList.length > 0" > {{element.text}} <i class="fa-solid fa-trash-can" @click="toDoRemove(index)"></i> </li>
                         <li class="text-uppercase fs-5" v-else>al momento non sono stati inseriti ToDo</li>
                     </ul>
                 </div>
