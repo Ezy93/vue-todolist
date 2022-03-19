@@ -23,19 +23,21 @@ const app = new Vue({
     data:{
         newToDo:"",
         
-        ToDoList: [
+        toDoList: [
             
         ],
     },
     methods:{
 
         addToDo(toDoContent){
-            if(toDoContent.trim()!== ""){
-                this.ToDoList.push({
+            if(toDoContent.trim()!= ""){
+                this.toDoList.push({
                     text: toDoContent,
                     done: false
-                })
+                },)
+                
             }
+            
         },
 
     },
