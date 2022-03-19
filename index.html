@@ -28,7 +28,7 @@
             <div class="row p-5">
                 <!-- qui andranno gli input -->
                 <div class="col-12 text-center p-5 input-group">
-                    <input type="text" name="" id="" class="form-control me-3 rounded" v-model="newToDo">
+                    <input type="text" name="" id="" class="form-control me-3 rounded" v-model="newToDo" @keydown.enter="addToDo(newToDo)">
                     <button class="btn btn-primary rounded"  @click="addToDo(newToDo)" >Add ToDo</button>
                 </div>
 

@@ -35,6 +35,7 @@ const app = new Vue({
                     text: toDoContent,
                     done: false
                 },)
+                this.newToDo = "";
                 
             }
             
